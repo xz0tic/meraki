@@ -1,0 +1,52 @@
+body {
+  font-family: 'Alegreya', serif;
+  background-color: #fcf6b9ff;
+}
+
+div {
+  text-align:center;
+  font-size: 60px;
+
+}
+
+#feed {
+  margin: 50px;
+}
+
+#profile {
+
+  margin: 200px;
+}
+
+#meaning {
+  margin:-90px;
+}
+
+#mea2 {
+  margin:520px;
+}
+
+#aboutUs {
+  margin: 250px;
+}
+
+#contact {
+  margin: -70px;
+}
+
+
+/*pictures */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.flex-container > #pic1 {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 120px;
+  font-size: 30px;
+}
