@@ -18,6 +18,18 @@ p{
   text-align: center;
 }
 
+#team{
+  text-align: center;
+  font-size:25px;
+  font-family: 'Alegreya',serif;
+}
+
+#bella {
+  text-align: center;
+  font-size: 40;
+}
+
+
 #feed {
   margin: 50px;
 }
