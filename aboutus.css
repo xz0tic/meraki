@@ -1,0 +1,38 @@
+body{
+  background-color: #fcf6b9ff;
+  color: black;
+  font-size: 40;
+  font-family: 'Alegreya',serif;
+}
+
+div {
+  text-align: center;
+  font-size: 60px;
+}
+
+h2{
+  text-align: center;
+}
+
+p{
+  text-align: center;
+}
+
+#feed {
+  margin: 50px;
+}
+#profile {
+  margin: 200px;
+}
+#meaning {
+  margin:-90px;
+}
+#mea2 {
+  margin:520px;
+}
+#aboutUs {
+  margin: 250px;
+}
+#contact {
+  margin: -70px;
+}
