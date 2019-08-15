@@ -43,8 +43,29 @@ p{
   margin:520px;
 }
 #aboutUs {
-  margin: 250px;
+  margin: 290px;
 }
 #contact {
-  margin: -70px;
+  margin: -50px;
 }
+
+a:link{
+  color:black;
+  text-decoration: none;
+}
+
+a:visited{
+  color:black;
+  text-decoration: none;
+}
+
+a:hover{
+  color:black;
+  text-decoration: none;
+}
+
+a:active{
+  color:black;
+  text-decoration: none;
+}
+
