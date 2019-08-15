@@ -35,13 +35,14 @@ body {font-family: 'Alegreya', serif;background-color:#fcf6b9ff}
   display: block;
   width: 80%;
   max-width: 700px;
+  
 }
 
 /* Caption of Modal Image */
 #caption {
   margin: auto;
   display: block;
-  font-size:50px;
+  font-size:40px;
   margin:-400px 800px;
   color: #ccc;
   padding: 10px 0;
@@ -94,7 +95,9 @@ body {font-family: 'Alegreya', serif;background-color:#fcf6b9ff}
 </head>
 <body>
 
-  <img id="myImg" src="IMG_7299.JPG" alt="Collage Posted By: Amelia" style="width:500;height:500px;margin:5px 300px;">
+
+<img id="myImg" src="IMG_7304.JPG" alt="A Farms Life Posted By: Amelia" style="width:500;height:500px;margin:5px 300px;transform: rotate(90deg);">
+
 <!-- The Modal -->
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
@@ -113,9 +116,7 @@ var captionText = document.getElementById("caption");
 img.onclick = function(){
   modal.style.display = "block";
   modalImg.src = this.src;
-  captionText.innerHTML = this.id;
-  captionText.innerHTML = "Collage Posted By: Ameila";
-  captionText.style.cssText = 'font-size: 50px; ';
+  captionText.innerHTML = this.alt;
 }
 
 // Get the <span> element that closes the modal
