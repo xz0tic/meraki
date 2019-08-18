@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+  <link href="feedEdit.css" rel="stylesheet">
+</head>
+<body>
+  <a href="finalFeed.html">
+    <div>MERAKI</div>
+  </a>
+
+  <p>
+       <sub id="feed"> <a href="finalFeed.html">FEED</a></sub>
+       <sub id="profile"> <a href="profilePage.html"><b>PROFILE</b></a></sub>
+       <sub id="aboutUs"><a href="aboutus.html">ABOUT US</a></sub>
+       <sub id="contact"><a href="contact.html">CONTACT</a></sub>
+  </p>
+
+  <p>
+    <img id="anon" src="anonPic.JPG" alt="" style="margin:30px ">
+  </p>
+
+  <p>
+    <form action="welcome_get.php" method="post">
+      <fieldset style="width:0px; margin:50px;">
+        <legend>Personal information:</legend>
+        First name:<br>
+        <input type="text" id="firstName" name="firstname">
+        <br>
+        Last name:<br>
+        <input type="text" id="lastName" name="lastname" >
+        <br>
+        Make a small bio about yourself:<br>
+        <input type="text" id="details" name="bio">
+        <br><br>
+        <input type="submit" value="Submit">
+      </fieldset>
+    </form>
+  </p>
