@@ -117,7 +117,7 @@ span.psw {
 
 <div id="id01" class="modal">
 
-  <form class="modal-content animate" action="/action_page.php">
+  <form id="form" class="modal-content animate" action="profilePage.html">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="anonPic.JPG" height="300px" width="250x" alt="Avatar" class="avatar">
@@ -125,18 +125,15 @@ span.psw {
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input id="name" type="text" placeholder="Enter Username" name="uname" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input id="pw" type="password" placeholder="Enter Password" name="psw" required>
 
-        <div class ="main">
-          <form action="file:///C:/Users/onori/Desktop/GWC/Python/profilePage.html" target="_blank" method="get">
-            <button type="submit" class="signupbtn" formaction="file:///C:/Users/onori/Desktop/GWC/Python/profilePage.html">Login</button>
-        </form>
+      <button type="submit">Login</button>
 
       <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
+        <input id="check" type="checkbox" checked="checked" name="remember"> Remember me
       </label>
     </div>
 
@@ -156,6 +153,20 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+function save(){
+  storeFormField('name');
+  storeFormField('pw');
+  storeFormField('pwRepeat');
+  storeFormField('check');
+}
+
+function storeFormField(name){
+  var x = document.getElementById(name).value;
+  window.localStorage.setItem(name,x);
+}
+
+
 </script>
 
 </body>
