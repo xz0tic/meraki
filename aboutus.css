@@ -29,25 +29,31 @@ p{
   font-size: 40;
 }
 
-
 #feed {
-  margin: 50px;
+  margin: 30px;
 }
+
 #profile {
-  margin: 200px;
+
+  margin: 220px;
 }
-#meaning {
-  margin:-90px;
-}
-#mea2 {
-  margin:520px;
-}
+
 #aboutUs {
-  margin: 290px;
+  margin: 250px;
 }
+
 #contact {
-  margin: -50px;
+  margin: 15px;
 }
+
+#House1{
+  transform: rotate(90deg);
+}
+
+#House2{
+  transform: rotate(90deg);
+}
+
 
 a:link{
   color:black;
@@ -68,4 +74,3 @@ a:active{
   color:black;
   text-decoration: none;
 }
-
