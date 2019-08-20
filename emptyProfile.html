@@ -1,77 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="feedEdit.css" rel="stylesheet">
+
+</head>
 <style>
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
+  box-shadow: 0 4px 8px  rgba(0, 0, 0, 0.2);
+  width: 300px;
+
   margin: auto;
   text-align: center;
+
   font-family: arial;
 }
-.title {
-  color: grey;
-  font-size: 18px;
-}
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
+
+
 a {
+  color:black;
   text-decoration: none;
-  font-size: 22px;
-  color: black;
+
 }
-button:hover, a:hover {
-  opacity: 0.7;
-}
+
 body{
 	background-color:#fcf6b9ff;
 }
+
+
 </style>
 </head>
 
 <body>
 
-<h2 style="text-align:center">Profile Card</h2>
+  <a href="finalFeed.html">
+    <div>MERAKI</div>
+  </a>
+
+  <p>
+       <sub> <a href="finalFeed.html">FEED</a></sub>
+       <sub id="profile"> <a href="emptyProfile.html"><b>PROFILE</b></a></sub>
+       <sub id="aboutUs"><a href="aboutus.html">ABOUT US</a></sub>
+       <sub id="contact"><a href="contact.html">CONTACT</a></sub>
+  </p>
+
+
+<h2 style="text-align:center">Welcome to Meraki</h2>
 
 <div class="card">
   <a href="profilePage.html">
     <!-- <img src="anonPic.jpg" alt="John" style="width:100%"> -->
 
-    <input id="myImage" type="file">
+    <input id="myImage" type="file" style="font-size:15px;">
 
-    <img id="foo" src="" alt="your image" style="width:100%">
+    <img id="foo" src="" alt="your image" style="width:100%;font-size:15px;">
 
-    <h1 id="name">(input username from login and signup)</h1>
 
-    <p class="title">Bio</p>
-    <p>(Bio Details)</p>
-    <div style="margin: 24px 0;">
+
+    <h1 id="name" style="font-size:15px;"></h1>
+
+
+    <!-- <div style="margin: 24px 0;">
   </a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-facebook"></i></a>
-  </div>
-  <p><button>Contact</button></p>
+
+  </div> -->
+
 </div>
 
 <script>
+
+//window.localStorage.clear();
+
 function changeUserDisplay(name){
   var x = window.localStorage.getItem(name);
   document.getElementById(name).innerHTML = x;
   console.log(x);
 }
+
 changeUserDisplay('name');
+
   var input = document.getElementById('myImage');
       input.onchange = function(evt){
           var tgt = evt.target || window.event.srcElement,
@@ -79,8 +85,7 @@ changeUserDisplay('name');
            if (FileReader && files && files.length) {
                var fr = new FileReader();
                fr.onload = function () {
-                   localStorage['foo'] = fr.result;
-                   console.log(localStorage['foo']);
+                  addImage(fr.result);
                }
                fr.readAsDataURL(files[0]);
            }
@@ -88,25 +93,46 @@ changeUserDisplay('name');
   var el = document.getElementById('foo');
   el.src = localStorage['foo'];
   var dataImage = localStorage.getItem('el');
-// var input = document.getElementById('myImage');
-//    input.onchange = function(evt){
-//        var tgt = evt.target || window.event.srcElement,
-//            files = tgt.files;
-//
-//        if (FileReader && files && files.length) {
-//            var fr = new FileReader();
-//            fr.onload = function () {
-//                localStorage['foo'] = fr.result;
-//                console.log(localStorage['foo']);
-//            }
-//            fr.readAsDataURL(files[0]);
-//        }
-//    }
-//     var el = document.getElementById('foo');
-//     el.src = localStorage['foo'];
-    //document.getElementById('foo')=localStorage.getItem('foo');
-    console.log('foo');
+
+  function addImage(myImg){
+    localStorage['foo']= myImg;
+    list.push(myImg);
+    localStorage['1']=JSON.stringify(list);
+    showImageList();
+  }
+
+  function loadFromStorage(){
+    var storage = localStorage['1'];
+    if(!storage){
+      return[];
+    }
+    console.log(storage);
+    return JSON.parse(storage);
+  }
+
+  function showImageList(){
+    var x = document.getElementById('feed');
+    x.innerHTML="";
+
+  for(const val of list){
+    console.log(val);
+    var newImg= document.createElement("img");
+    newImg.src = val;
+    newImg.width = "100";
+    //newImg.width = '100%';
+    x.appendChild(newImg);
+    }
+  }
+
+  var list = loadFromStorage();
+  showImageList();
+
 </script>
+
+
+<div id="feed">
+</div>
+
 
 </body>
 </html>
