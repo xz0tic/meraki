@@ -17,13 +17,14 @@
        <sub id="contact"><a href="contact.html">CONTACT</a></sub>
   </p>
 
+ <p id="profile2" style="margin:40px;font-size:25px;"></p>
   <p>
-    <img id="anon" src="anonPic.JPG" alt="" style="margin:30px ">
+    <img id="anon" src="anonPic.JPG" alt="s" style="margin:30px ">
   </p>
 
-  <p id="profile"></p>
+
     <form id="myInfo" >
-      <fieldset style="width:0px; margin:-280px 300px ;">
+      <fieldset style="width:0px; margin:25px 100px ;">
         <legend>Personal information:</legend>
 
           First Name:<input type="text" id="fname"/><br/>
@@ -39,9 +40,10 @@
       </fieldset>
     </form>
 
+
     <script type="text/javascript">
       function generateFullProfile(){
-          var profile = document.getElementById('profile');
+          var profile = document.getElementById('profile2');
           var fname = document.getElementById('fname');
           var bio = document.getElementById('bio');
           var formContent = document.getElementById('myInfo');
