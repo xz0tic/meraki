@@ -10,12 +10,10 @@
   text-align: center;
   font-family: arial;
 }
-
 .title {
   color: grey;
   font-size: 18px;
 }
-
 button {
   border: none;
   outline: 0;
@@ -28,32 +26,36 @@ button {
   width: 100%;
   font-size: 18px;
 }
-
 a {
   text-decoration: none;
   font-size: 22px;
   color: black;
 }
-
 button:hover, a:hover {
   opacity: 0.7;
 }
-
 body{
 	background-color:#fcf6b9ff;
 }
 </style>
 </head>
+
 <body>
 
 <h2 style="text-align:center">Profile Card</h2>
 
 <div class="card">
   <a href="profilePage.html">
-    <img src="anonPic.JPG" alt="" style="width:100%">
+    <!-- <img src="anonPic.jpg" alt="John" style="width:100%"> -->
+
+    <input id="myImage" type="file">
+
+    <img id="foo" src="" alt="your image" style="width:100%">
+
     <h1 id="name">(input username from login and signup)</h1>
+
     <p class="title">Bio</p>
-    <p></p>
+    <p>(Bio Details)</p>
     <div style="margin: 24px 0;">
   </a>
       <a href="#"><i class="fa fa-twitter"></i></a>
@@ -67,9 +69,43 @@ body{
 function changeUserDisplay(name){
   var x = window.localStorage.getItem(name);
   document.getElementById(name).innerHTML = x;
+  console.log(x);
 }
-
 changeUserDisplay('name');
+  var input = document.getElementById('myImage');
+      input.onchange = function(evt){
+          var tgt = evt.target || window.event.srcElement,
+               files = tgt.files;
+           if (FileReader && files && files.length) {
+               var fr = new FileReader();
+               fr.onload = function () {
+                   localStorage['foo'] = fr.result;
+                   console.log(localStorage['foo']);
+               }
+               fr.readAsDataURL(files[0]);
+           }
+       }
+  var el = document.getElementById('foo');
+  el.src = localStorage['foo'];
+  var dataImage = localStorage.getItem('el');
+// var input = document.getElementById('myImage');
+//    input.onchange = function(evt){
+//        var tgt = evt.target || window.event.srcElement,
+//            files = tgt.files;
+//
+//        if (FileReader && files && files.length) {
+//            var fr = new FileReader();
+//            fr.onload = function () {
+//                localStorage['foo'] = fr.result;
+//                console.log(localStorage['foo']);
+//            }
+//            fr.readAsDataURL(files[0]);
+//        }
+//    }
+//     var el = document.getElementById('foo');
+//     el.src = localStorage['foo'];
+    //document.getElementById('foo')=localStorage.getItem('foo');
+    console.log('foo');
 </script>
 
 </body>
